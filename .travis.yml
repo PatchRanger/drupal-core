@@ -35,7 +35,7 @@ before_script:
  - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then cp sites/all/modules/simpletest/run-tests.sh scripts/run-tests.sh; fi"
  # Drush in D6 enables wrong.
  #- drush en simpletest --yes
- - sh -c "if [ '$DRUPAL_VERSION' = '7.x' ]; then drush en $DRUPAL_MODULE --yes; else drush php-eval \"module_enable(array('simpletest'));\"; fi"
+ - sh -c "if [ '$DRUPAL_VERSION' = '7.x' ]; then drush en simpletest --yes; else drush php-eval \"module_enable(array('simpletest'));\"; fi"
  - drush cc all
  - drush runserver --server=builtin 8080 &
  - sleep 4
