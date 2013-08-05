@@ -33,7 +33,9 @@ before_script:
  - drush si $PROFILE --db-url=mysql://root:@localhost/drupal --yes
  # Prepare Simpletest.
  - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then cp sites/all/modules/simpletest/run-tests.sh scripts/run-tests.sh; fi"
- - drush en simpletest --yes
+ # Drush in D6 enables wrong.
+ #- drush en simpletest --yes
+ - sh -c "if [ '$DRUPAL_VERSION' = '7.x' ]; then drush en $DRUPAL_MODULE --yes; else drush php-eval \"module_enable(array('simpletest'));\"; fi"
  - drush cc all
  - drush runserver --server=builtin 8080 &
  - sleep 4
