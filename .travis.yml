@@ -21,7 +21,7 @@ before_script:
  - phpenv rehash
  - cd ..
  # Check CURL.
- - drush php-eval "echo function_exists('curl_version') ? 'Enabled' : 'Disabled';"
+ - drush php-eval "echo (function_exists('curl_version') ? 'Enabled' : 'Disabled');"
  # Prepare Drupal.
  - mkdir drupal
  - cd drupal
