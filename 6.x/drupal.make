@@ -20,6 +20,6 @@ projects[simpletest][version] = 2.x-dev
 ; Patches.
 ; Done in build script, because the core patch is dynamically patched.
 ;projects[drupal][patch][] = "http://drupalcode.org/project/simpletest.git/blob_plain/refs/heads/6.x-2.x:/D6-core-simpletest.patch"
-projects[drupal][patch][] = "http://drupal.org/files/issues/simpletest_drupal.js_.patch"
+;projects[drupal][patch][] = "http://drupal.org/files/issues/simpletest_drupal.js_.patch"
 projects[drupal][patch][] = "http://raw.github.com/PatchRanger/drupal-botcha/master/6.x/drupal-399642-improve_module_enable_to_install_if_necessary-117.patch"
 projects[simpletest][patch][] = "http://drupal.org/files/issues/890440-backport-round2_3.patch"
