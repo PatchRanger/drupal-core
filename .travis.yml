@@ -36,7 +36,7 @@ before_script:
  - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then cp sites/all/modules/simpletest/D6-core-simpletest.patch D6-core-simpletest.patch; fi"
  - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then patch -p1 -t -i D6-core-simpletest.patch; fi"
  - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then wget http://drupal.org/files/issues/simpletest_drupal.js_.patch -O simpletest_drupal.js_.patch; fi"
- - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then patch -p1 -t -i simpletest_drupal.js_.patch; fi"
+ - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then patch -p0 -t -i simpletest_drupal.js_.patch; fi"
  - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then cp sites/all/modules/simpletest/run-tests.sh scripts/run-tests.sh; fi"
  # Drush in D6 enables wrong.
  #- drush en simpletest --yes
