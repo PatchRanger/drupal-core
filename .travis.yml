@@ -9,10 +9,10 @@ mysql:
 
 env:
   # 6.x
-  - GITHUB_REPOSITORY=drupal DRUPAL_VERSION=6.x PROFILE=default
+  - GITHUB_REPOSITORY=drupal-core DRUPAL_VERSION=6.x PROFILE=default
   # 7.x
   # 7.x-1.x
-  - GITHUB_REPOSITORY=drupal DRUPAL_VERSION=7.x PROFILE=standard
+  - GITHUB_REPOSITORY=drupal-core DRUPAL_VERSION=7.x PROFILE=standard
 
 before_script:
  - mysql -e 'create database drupal;'
