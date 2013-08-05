@@ -15,7 +15,8 @@ env:
 
 before_script:
  # Install CURL extension.
- - echo 'extension = php-curl.so' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+ #- echo 'extension = curl.so' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+ - pecl install curl
  - mysql -e 'create database drupal;'
  - pyrus channel-discover pear.drush.org
  - pyrus install drush/drush-devel
