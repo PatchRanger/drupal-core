@@ -32,6 +32,9 @@ before_script:
  # Install Drupal.
  - drush si $PROFILE --db-url=mysql://root:@localhost/drupal --yes
  # Prepare Simpletest.
+ # Patch core using patched patch.
+ - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then cp sites/all/modules/simpletest/D6-core-simpletest.patch D6-core-simpletest.patch; fi"
+ - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then patch -p1 < D6-core-simpletest.patch; fi"
  - sh -c "if [ '$DRUPAL_VERSION' = '6.x' ]; then cp sites/all/modules/simpletest/run-tests.sh scripts/run-tests.sh; fi"
  # Drush in D6 enables wrong.
  #- drush en simpletest --yes
